@@ -31,7 +31,11 @@
     display: inline;
     margin: 0 15px;
 }
-
+@media screen and (max-width: 725px) {
+    .menu ul li {
+      margin: 0 5px;
+    }
+}
 .menu ul li a{
     color: #fff;
     text-decoration: none;
@@ -39,7 +43,7 @@
     font-size: 35px;
     transition: all 0.2s linear;
 }
-
+ 
 .menu ul li a:hover{
     color: 	#FFD306;
     font-size: 37px;
@@ -439,7 +443,7 @@
     .cnt {
         position: absolute;
         top: 70%;
-        left: 22%;
+        left: 5%;
         text-align: justify;
         width: 350px;
     }

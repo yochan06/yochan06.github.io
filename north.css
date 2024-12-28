@@ -1,0 +1,521 @@
+/* 全局重設 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.menu{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9) ;
+    padding: 10px 0;
+    z-index: 1000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li{
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+    transition: all 0.2s linear;
+}
+
+.menu ul li a:hover{
+    color: 	#FFD306;
+    font-size: 37px;
+}
+
+.north{
+    text-align: center;
+}
+
+.north-title{
+    font-size: 160px;
+    color: #f1bf08;
+}
+
+@media screen and (max-width: 725px) {
+    .north-title {
+      font-size: 70px;
+      color: #f1bf08;
+    }
+}  
+
+
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0%;
+    z-index: -4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title2{
+    width: 100%;
+    height: 70vh;
+    font-size: 350px;
+    display: flex;
+    justify-content: center;
+    background: url(https://a.travel-assets.com/findyours-php/viewfinder/images/res70/488000/488771-raohe-street-night-market.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    font-family: Oswald;
+}
+
+@media screen and (max-width: 1350px) {
+    .title2 {
+      font-size: 300px;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .title2 {
+      font-size: 100px;
+    }
+}
+
+.history{
+    width: 100%;
+    background-color: #d8a31a;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+@media screen and (max-width: 1350px) {
+    .history {
+      height: 50vh;
+    }
+}
+
+@media screen and (max-width: 725px) {
+    .history {
+      height: 22vh;
+    }
+}
+
+.slider{
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 725px) {
+    .slider {
+        height: 60vh;
+    }
+}
+
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.slider .list .item img:hover{
+    filter: brightness(100%);
+}
+
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(
+        to top, #000 40%, transparent
+    );
+}
+
+@media screen and (max-width: 725px) {
+    .slider .list .item::after{
+        background-image: linear-gradient(
+        to top, #000 0%, transparent
+    );
+    }
+}
+
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 800px;
+    max-width: 80%;
+    z-index: 1;
+}
+
+.slider .list .item .content p{
+    color: #fff;
+}
+
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.slider .list .item .content h2{
+    font-size: 100px;
+    margin: 0;
+    color: #fff;
+}
+
+@media screen and (max-width: 725px) {
+    .slider .list .item .content h2{
+      font-size: 50px;
+    }
+}
+
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.seemore,
+.slider .list .item.active p:nth-child(3){
+    opacity: 0;
+    animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+
+
+
+.slider .list .item.active p:nth-child(3){
+    animation-delay: 1.3s;
+}
+
+.arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+}
+
+@media screen and (max-width: 725px) {
+    .arrows{
+        position: absolute;
+        top: 17.5%;
+        right: 50px;
+        z-index: 100;
+    }
+}
+
+.arrows button{
+    background-color:#eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: 0.5s;
+}
+
+.arrows button:hover{
+    background-color: #eee;
+    color: #000;
+}
+
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+}
+
+@media screen and (max-width: 725px) {
+    .thumbnail {
+        display: none;
+    }
+}
+
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(1.5);
+    transition: .7s;
+    flex-shrink: 0;
+}
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(50%); /* 預設較暗 */
+    transition: filter 0.3s ease;
+}
+
+.thumbnail .item img:hover{
+    filter: brightness(100%);
+}
+
+.thumbnail .item .active{
+    filter: brightness(1.5) !important;
+}
+
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+.content{
+    color: #eee;
+}
+
+
+.market-Q{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.market1{
+    background-color: rgb(35, 35, 35);
+    height: auto;
+    color: rgb(234, 166, 8);
+    
+}
+
+.market1title{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    margin-bottom: 60px;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.photo1,.photo2,.photo3,.photo4,.photo5,.photo6{
+    width: 250px;
+    height: 300px;
+    object-fit: cover; /* 保持圖片比例 */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s
+}
+
+.photo1:hover,.photo2:hover,.photo3:hover,.photo4:hover,.photo5:hover,.photo6:hover{
+    transform: scale(1.2);
+}
+
+.market1photo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* 圖片間距 */
+    justify-content: space-evenly; /* 水平居中 */
+}
+
+.sld{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #0D0E12;
+    overflow: hidden;
+}
+
+.ttl{
+    position: absolute;
+    display: flex;
+    margin-left: 150px;
+    margin-top: 80px;
+    text-align: right;
+    color: #fff;
+    font-size: 150px;
+    width: 40%;
+    font-family: 'Pacifico', cursive;
+}
+
+@media screen and (max-width: 725px) {
+    .ttl {
+      font-size: 75px;
+      margin-left: 75px;
+      margin-top: 60px;
+    }
+}
+
+.imgs{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    --rotate: 0deg;
+    transform: translate(-50%, 50%) rotate(var(--rotate));
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+    outline: 3px dashed #fff5;
+    outline-offset: -100px;
+}
+.imgs .itm{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    rotate: calc(60deg * var(--i));
+}
+.imgs .itm img{
+    height: 250px;
+}
+
+@media screen and (max-width: 725px) {
+    .imgs .itm img {
+      height: 230px;
+    }
+}
+
+.cnt{
+    color: #ffffff;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    text-align: justify;
+    width: 350px;
+}
+
+@media screen and (max-width: 725px) {
+    .cnt {
+        position: absolute;
+        top: 70%;
+        left: 22%;
+        text-align: justify;
+        width: 350px;
+    }
+}
+
+.cnt h1{
+    color: #E88735;
+    font-size: xxx-large;
+}
+.cnt button{
+    margin-top: 30px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: #E88735;
+    color: #ffffff;
+    border: none;
+    float: right;
+}
+.cnt .itm{
+    display: none;
+}
+.cnt .itm.act{
+    display: block;
+}
+@keyframes showContent{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+    }to{
+        opacity: 1;
+    }
+}
+.cnt .itm.act h1{
+    opacity: 0;
+    animation: showContent 0.5s ease-in-out 1 forwards;
+}
+.cnt .itm.act .ds{
+    opacity: 0;
+    animation: showContent 0.5s 0.3s ease-in-out 1 forwards;
+}
+.cnt .itm.act button{
+    opacity: 0;
+    animation: showContent 0.5s 0.6s ease-in-out 1 forwards;
+}
+
+
+#prv,
+#nxt{
+    position: absolute;
+    border: none;
+    display: flex;
+    margin-top: 90px;
+    top: 50%;
+    left: 200px;
+    font-size: 100px;
+    font-family: cursive;
+    background-color: transparent;
+    color: #fff;
+    font-weight: bold;
+    opacity: 0.3
+}
+
+#nxt{
+    left: unset;
+    right: 200px;
+}
+#nxt:hover,
+#prv:hover{
+    opacity: 1
+}
+
+@media screen and (max-width: 725px) {
+    #prv,
+    #nxt{
+        display: none;
+    }
+}
+
+

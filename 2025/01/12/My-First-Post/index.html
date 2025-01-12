@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yochan06的技術筆記</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="page-post">
+    <header>
+    <div class="header-container">
+        <div class="logo"><a href="/">yochan06的技術筆記</a></div>
+        <nav>
+            <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+    <div class="content-wrapper">
+        <div class="container">
+            <main class="main-content">
+                <div class="post-list-container">
+                    <article class="post">
+                        <h1 class="post-title">My First Test Post</h1>
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> 2025-01-12</span>
+                        </div>
+                        <div class="post-content" id="post-content">
+                            
+                        </div>
+                    </article>
+                </div>
+            </main>
+            <aside class="sidebar">
+                <div class="widget">
+                     <h3 class="widget-title">目錄</h3>
+                     <div class="widget-content">
+                         <ul id="toc"></ul>
+                     </div>
+                 </div>
+            </aside>
+        </div>
+    </div>
+    <footer>
+    <div class="footer-container">
+        <div>
+            <p> © 2025 yochan06 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> | Theme by <a target="_blank" rel="noopener" href="https://github.com/yochan06">yochan06</a></p>
+        </div>
+    </div>
+</footer>
+    <canvas id="code-rain"></canvas>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+         const postContent = document.getElementById('post-content');
+         const toc = document.getElementById('toc');
+
+         if (postContent && toc) {
+             const headings = postContent.querySelectorAll('h2, h3, h4, h5, h6');
+
+             headings.forEach((heading, index) => {
+                 const id = 'heading-' + index;
+                 heading.id = id;
+
+                 const li = document.createElement('li');
+                 const a = document.createElement('a');
+                 a.href = '#' + id;
+                 a.textContent = heading.textContent;
+
+                 li.appendChild(a);
+                 toc.appendChild(li);
+             });
+         }
+     });
+ </script>
+ <script src="/js/code-rain.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About yochan06</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="page-about">
+    <header>
+    <div class="header-container">
+        <div class="logo"><a href="/">yochan06的技術筆記</a></div>
+        <nav>
+            <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+    <div class="content-wrapper">
+        <div class="container">
+            <main class="main-content">
+                <div class="about-content">
+                    <div class="about-header">
+                        <div class="avatar-container">
+                            <img src="/images/132590659.png" alt="Avatar">
+                        </div>
+                        <h1 class="page-title">About yochan06</h1>
+                    </div>
+                    <div id="about-info">
+                        <h2 id="關於我"><a href="#關於我" class="headerlink" title="關於我"></a>關於我</h2><p>一枚喜歡資安的學生</p>
+<p>想挑戰bug bounty program</p>
+<!--## 關於本站
+
+這裡寫blog的介紹...-->
+
+<h2 id="聯繫方式"><a href="#聯繫方式" class="headerlink" title="聯繫方式"></a>聯繫方式</h2><ul>
+<li>Email: </li>
+<li>GitHub: yochan06</li>
+</ul>
+<h2 id="2025"><a href="#2025" class="headerlink" title="2025"></a>2025</h2><p>還沒有東西…</p>
+<h2 id="2024"><a href="#2024" class="headerlink" title="2024"></a>2024</h2><ul>
+<li>台電白帽駭客漏洞懸賞活動</li>
+</ul>
+
+                    </div>
+                </div>
+            </main>
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">年份</h3>
+                    <div class="widget-content">
+                        <ul id="year-list">
+                            <!-- 使用 JavaScript 動態生成年份列表 -->
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer>
+    <div class="footer-container">
+        <div>
+            <p> © 2025 yochan06 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> | Theme by <a target="_blank" rel="noopener" href="https://github.com/yochan06">yochan06</a></p>
+        </div>
+    </div>
+</footer>
+    <canvas id="code-rain"></canvas>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutContent = document.querySelector('.about-content');
+            const yearList = document.getElementById('year-list');
+
+            if (aboutContent && yearList) {
+                const headings = aboutContent.querySelectorAll('h2');
+
+                headings.forEach(heading => {
+                    const yearMatch = heading.textContent.match(/^(\d{4})/); 
+                    if (yearMatch) {
+                        const year = yearMatch[1];
+                        const id = 'year-' + year;
+                        heading.id = id; 
+
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#' + id;
+                        a.textContent = year;
+                        a.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const targetElement = document.getElementById(id);
+                            if (targetElement) {
+                                window.scrollTo({
+                                    top: targetElement.offsetTop - 100, 
+                                    behavior: 'smooth'
+                                });
+                            }
+                        });
+
+                        li.appendChild(a);
+                        yearList.appendChild(li);
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="/js/code-rain.js"></script>
+</body>
+</html>

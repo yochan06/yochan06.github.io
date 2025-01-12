@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+
+html {
+    height: 100%; /* 確保 html 元素的高度至少為視窗高度 */
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    color: #ccc;
+    margin: 0; /* 清除默認邊距 */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+a {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* 讓內容區域填滿剩餘空間 */
+}
+
+.container {
+    max-width: 1280px; /* 調整container寬度 */
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex; /* 使 container 內元素可以水平排列 */
+}
+
+main {
+    width: 75%; /* 調整主內容區塊的寬度 */
+    box-sizing: border-box;
+
+}
+
+.main-content{
+    width: 80%; /* 調整主內容區塊的寬度 */
+    padding-right: 0px; /* 調整右邊距，避免與側邊欄重疊 */
+    padding-left: 20%;
+}
+
+header {
+    background-color: #222; 
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.header-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-between; /* 兩端對齊 */
+    align-items: center; /* 垂直居中 */
+    max-width: 1280px; /* 與 .container 相同 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 20px; /* 與 .container 相同 */
+}
+
+.logo a {
+    color: #00FF00;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a {
+    color: #ccc;
+}
+
+nav a:hover {
+    color: #00FF00;
+}
+
+/* 底部 */
+footer {
+    background-color: #222;
+    width: 100%; 
+    box-sizing: border-box;
+    text-align: center;
+    /* margin-top: 20px; */ /* 若有設定margin-top可以移除 */
+}
+
+.footer-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 底部先簡單置中 */
+    align-items: center; /* 垂直居中 */
+    max-width: 1280px; 
+    margin: 0 auto; /* 水平居中 */
+    padding: 10px 20px; 
+}
+
+footer a {
+    color: #00FF00;
+}
+
+/* 文章列表 */
+.post-list-container {
+    padding-right: 50px;
+    width: 95%;
+}
+
+.post {
+    border: 2px solid #00FF00; 
+    border-radius: 15px;
+    padding: 20px; 
+    margin-bottom: 10px; 
+    background-color: #000; /* 添加黑色背景色 */
+}
+
+.post-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top: 0; 
+}
+
+.post-title a {
+    color: #00FFFF;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.post-meta span {
+    margin-right: 10px;
+}
+
+.post-excerpt {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: #00FF00;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+.read-more:hover {
+    background-color: #00FFFF;
+    color: #fff;
+    box-shadow: 0 0 10px #00FFFF;
+}
+
+/* 文章標籤 */
+.post-tags {
+    margin-top: 10px;
+}
+
+.post-tags a {
+    display: inline-block;
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #666;
+}
+
+.post-tags i {
+    margin-right: 5px;
+}
+
+/* 文章内容页 */
+.post-content {
+    line-height: 1.8;
+}
+
+.post-content pre {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.post-content code {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #222;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #00FF00;
+}
+
+.post-content blockquote {
+    border-left: 5px solid #00FF00;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #222;
+    font-style: italic;
+}
+
+
+.archive-year {
+    font-size: 24px;
+    color: #00FF00;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+.sidebar {
+    width: 30%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.widget {
+    background-color: #111;
+    border: 2px solid #00FF00; /* 更新外框線條 */
+    border-radius: 15px; /* 更新圓角 */
+    padding: 20px; /* 調整邊框距離 */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+
+}
+
+.widget-title {
+    color: #00FF00;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.widget-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-content li {
+    margin-bottom: 5px;
+}
+
+.widget-content li a {
+    color: #00FFFF;
+}
+
+.widget-content li a:hover {
+    text-decoration: underline;
+}
+
+.tag-list li {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.widget-content ul#toc {
+    list-style: none;
+    padding: 0;
+}
+
+.widget-content ul#toc li {
+    margin-bottom: 5px;
+}
+
+.widget-content ul#toc li a {
+    color: #00FFFF; 
+}
+
+.widget-content ul#toc li a:hover{
+    text-decoration: underline;
+}
+
+/* about頁面 */
+.about-content {
+    padding: 20px;
+    background-color: #111;
+    border: 2px solid #00FF00;
+    border-radius: 15px;
+    width: 80%; 
+    max-width: 700px; 
+    /* margin: 0 auto;  不再需要 */
+}
+
+.about-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* 調整元素之間的距離 */
+}
+
+.about-content h1 {
+    color: #00FF00;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.about-content h2 {
+    color: #00FFFF;
+    margin-top: 30px;
+}
+
+.about-content ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.avatar-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.year-select-container {
+    text-align: center; /* 讓年份選單置中 */
+}
+
+.year-select-container select {
+    background-color: #333;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+
+.widget-content ul#year-list li a{
+    color: #00FFFF;
+    display: block; /* 使年份可點擊區域變大 */
+    width: 100%; /* 使年份可點擊區域變大 */
+}
+
+.widget-content ul#year-list li a:hover{
+    text-decoration: underline;
+}
+
+#code-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 確保 canvas 在背景 */
+}
+/*
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 2px;
+    height: 100%;
+    background-color: #00FF00;
+}*/
+.timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-year {
+    text-align: center;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #222;
+    z-index: 10;
+    padding: 10px 0;
+    width: 10%;
+}
+
+.timeline-year span {
+    font-size: 18px;
+    color: #00FF00;
+    font-weight: bold;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row;
+    text-align: left;
+}
+
+.timeline-item:nth-child(odd) .timeline-marker {
+    margin-left: 30px;
+}
+
+.timeline-item:nth-child(even) .timeline-marker {
+    margin-left: 30px;
+}
+
+.timeline-marker {
+    width: 12px;
+    height: 12px;
+    background-color: #00FF00;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-right: 20px;
+    position: relative;
+    z-index: 20; 
+}
+
+.timeline-content {
+    flex: 1;
+    background-color: #111;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.timeline-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.timeline-title a {
+    color: #00FFFF;
+}
+
+.timeline-meta {
+    font-size: 14px;
+    color: #666;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+    color: #00FF00;
+}
+
+.pagination a:hover {
+    background-color: #00FF00;
+    color: #000;
+}
+
+.pagination .page-number {
+    font-weight: bold;
+    background-color: #000;
+}

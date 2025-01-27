@@ -29,24 +29,31 @@
             <main class="main-content">
                 <div class="post-list-container">
                     <article class="post">
-                        <h1 class="post-title">Hello World</h1>
+                        <h1 class="post-title">TUCTF 2024 Writeup</h1>
                         <div class="post-meta">
-                            <span><i class="fas fa-calendar"></i> 2025-01-12</span>
+                            <span><i class="fas fa-calendar"></i> 2025-01-27</span>
                         </div>
                         <div class="post-content" id="post-content">
-                            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                            <p>簡單寫個writeup，不然blog看起來有點空。</p>
+<p>話說寫到一半發現…比賽標題年份寫錯了?</p>
+<p><img src="/../../../images/%E5%AF%AB%E9%8C%AF.png" alt="寫錯"></p>
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="My-First-Secret"><a href="#My-First-Secret" class="headerlink" title="My First Secret"></a>My First Secret</h2><p>這一題看到登入頁面，不用多想先戳SQLi</p>
+<p><img src="/../../../images/My_First_Secret-1.png" alt="My_First_Secret-1"></p>
+<p>在帳號的欄位打上</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; OR 1=1; -- #</span></span><br></pre></td></tr></table></figure>
+<p>密碼就任意值</p>
+<p>登入成功，看到一個應該是flag的圖片，但看不出來要怎麼把這些圖形轉文字</p>
+<p><img src="/../../../images/challenge.png" alt="challenge"></p>
+<p>用以圖搜圖找了一陣子，找到這篇貼文</p>
+<p><a target="_blank" rel="noopener" href="https://www.reddit.com/r/Mistborn/comments/unlp3e/is_this_an_accurate_translation_of_the_steel/">https://www.reddit.com/r/Mistborn/comments/unlp3e/is_this_an_accurate_translation_of_the_steel/</a></p>
+<p>然後貼文留言有人提供一個wiki連結，當中有個對照表</p>
+<p><a target="_blank" rel="noopener" href="https://coppermind.net/wiki/Steel_alphabet">https://coppermind.net/wiki/Steel_alphabet</a></p>
+<p><img src="/../../../images/My_First_Secret-2.png" alt="My_First_Secret-2"></p>
+<p>根據對照表還有題目的圖片可以得出flag如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TUCTF&#123;THERE_IS_ALWAYS_ANOTHER_SECRET&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>(順帶一提，解題中途修flag是用google修的)</p>
+<p><img src="/../../../images/My_First_Secret-3.png" alt="My_First_Secret-3"></p>
 
                         </div>
                     </article>

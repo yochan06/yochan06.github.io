@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yochan06的技術筆記</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body class="page-post">
+    <header>
+    <div class="header-container">
+        <div class="logo"><a href="/">yochan06的技術筆記</a></div>
+        <nav>
+            <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+    <div class="content-wrapper">
+        <div class="container">
+            <main class="main-content">
+                <div class="post-list-container">
+                    <article class="post">
+                        <h1 class="post-title">Codefest 2025 Writeup</h1>
+                        <div class="post-meta">
+                            <span><i class="fas fa-calendar"></i> 2025-01-27</span>
+                        </div>
+                        <div class="post-content" id="post-content">
+                            <p>打不動x3CTF才跑來打這場</p>
+<h1 id="OSINT"><a href="#OSINT" class="headerlink" title="OSINT"></a>OSINT</h1><h2 id="JEE-Advanced"><a href="#JEE-Advanced" class="headerlink" title="JEE (Advanced)"></a>JEE (Advanced)</h2><p>基本上7題OSINT都是在找同個人的資訊</p>
+<p>題目要找的人是 <code>Arnav Kumar Sinha</code>的在 JEE Advanced 中的排名以及出現的年份</p>
+<p><img src="/../../../images/codefest-osint.png" alt="codefest-osint"></p>
+<p>先直接google搜尋找這個名字</p>
+<p>會找到這個人的linkedin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.linkedin.com/in/iedfa/</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/codefest-osint-1.png" alt="codefest-osint-1"></p>
+<p>第一題Flag就出來了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;2022_858&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Present-Sir"><a href="#Present-Sir" class="headerlink" title="Present Sir!"></a>Present Sir!</h2><p>接著找同個人的roll number</p>
+<p>透過google搜尋可以找到一份pdf檔案，Ctrl+F找這個人就能找到他的roll number</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://prev.iitbhu.ac.in/contents/cse/doc/btech_students_cse_2021-22.pdf</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/codefest-osint-2.png" alt="codefest-osint-2"></p>
+<p>第二題Flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;22075013&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Alias"><a href="#Alias" class="headerlink" title="Alias"></a>Alias</h2><p>找這人的網名，題目說是特定5個字的名字</p>
+<p>這題對我來說有點像是通靈到的，剛好滑到這個網站</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://iitbhucybersec.in/members/1/</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/codefest-osint-3.png" alt="codefest-osint-3"></p>
+<p>看到那個人暱稱剛好是5個字的就直接送，結果還真的對了…</p>
+<p>第三題Flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;iedfa&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CP"><a href="#CP" class="headerlink" title="CP"></a>CP</h2><p>這一題要找這個人的在Codeforces上的 current rating 和 max rating 還有 CodeChef 上的 current rating </p>
+<p>直接用剛剛上一題用到的網站就可以直接連到他Codeforces的profile</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://codeforces.com/profile/iedfa</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/codefest-osint-4.png" alt="codefest-osint-4"></p>
+<p>然後CodeChef 上的 current rating直接用google搜尋沒找到，所以請隊友幫我找，Elliot_404就丟給我一個CodeChef 上的 profile連結，我把url上的用戶名改成題目要找的人</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.codechef.com/users/iedfa</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/codefest-osint-5.png" alt="codefest-osint-5"></p>
+<p>第四題Flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;1687_1769_2018&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>這題找那人的github username</p>
+<p>直接用第三題找到的網站連到他的github</p>
+<p>第五題Flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;JustAnAverageGuy&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="JEE-Main"><a href="#JEE-Main" class="headerlink" title="JEE Main"></a>JEE Main</h2><p>這題找那個人在 JEE Main的percentile</p>
+<p>直接google搜尋他的名字加上JEE Main</p>
+<p>就會看到這個youtube影片</p>
+<p><img src="/../../../images/codefest-osint-6.png" alt="codefest-osint-6"></p>
+<p>第六題Flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;99.72&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="KVT"><a href="#KVT" class="headerlink" title="KVT"></a>KVT</h2><p>題目給一張圖找照拍攝地點座標</p>
+<p><img src="/../../../images/codefest-osint-chall1.png" alt="codefest-osint-chall1"></p>
+<p>直接透google圖搜圖就能找到大致上的地點，然後找旁邊那個紅色招牌的房屋</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;25.3071_83.0105&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="College"><a href="#College" class="headerlink" title="College"></a>College</h2><p>這題分數因為沒注意到多一個空格，所以沒有拿到分數</p>
+<p>題目也給一張圖找照拍攝地點座標</p>
+<p><img src="/../../../images/codefest-osint-chall2.png" alt="codefest-osint-chall2"></p>
+<p>這題嘗試10次都錯，達到限制次數，問隊友才發現我多打一個空格…</p>
+<p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/ySTZkRowjVmkjEnW6">https://maps.app.goo.gl/ySTZkRowjVmkjEnW6</a></p>
+<p>flag應該是這個吧?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CodefestCTF&#123;25.2779_83.0023&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h1><h2 id="Simple-Upload"><a href="#Simple-Upload" class="headerlink" title="Simple Upload"></a>Simple Upload</h2><p>這一題點進去會看到一個檔案上傳頁面</p>
+<p><img src="/../../../images/codefest-web.png" alt="codefest-web"></p>
+<p>然後上傳一個圖片檔案，上傳成功後會給你檔案位置的URL</p>
+<p><img src="/../../../images/codefest-web-1.png" alt="codefest-web-1"></p>
+<p>然後把URL後的file參數改成..&#x2F;flag.txt，答案就出來了</p>
+<p><img src="/../../../images/codefest-web-2.png" alt="codefest-web-2"></p>
+<p>(搞半天才發現不是任意檔案上傳)</p>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><p>這題用nc連進去會看到他要你輸入東西</p>
+<p><img src="/../../../images/codefest-misc.png" alt="codefest-misc"></p>
+<p>然後就先隨便輸入任意東西，按Enter直到連線中斷，接著他回顯是系統的資訊</p>
+<p><img src="/../../../images/codefest-misc-1.png" alt="codefest-misc-1"></p>
+<p>所以就猜應該能用系統指令，先嘗試ls</p>
+<p><img src="/../../../images/codefest-misc-2.png" alt="codefest-misc-2"></p>
+<p>確定能用</p>
+<p>直接找flag檔案</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name <span class="string">&quot;*flag*&quot;</span> 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../../../images/codefest-misc-3.png" alt="codefest-misc-3"></p>
+<p>有找到flag.txt，接著直接去cat flag.txt就可以了</p>
+<p><img src="/../../../images/codefest-misc-4.png" alt="codefest-misc-4"></p>
+<p>懶一點也可以直接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name <span class="string">&quot;*flag*&quot;</span> -<span class="built_in">exec</span> grep <span class="string">&quot;CodefestCTF&#123;&quot;</span> &#123;&#125; \; -<span class="built_in">print</span> 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+                        </div>
+                    </article>
+                </div>
+            </main>
+            <aside class="sidebar">
+                <div class="widget">
+                     <h3 class="widget-title">目錄</h3>
+                     <div class="widget-content">
+                         <ul id="toc"></ul>
+                     </div>
+                 </div>
+            </aside>
+        </div>
+    </div>
+    <footer>
+    <div class="footer-container">
+        <div>
+            <p> © 2025 yochan06 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> | Theme by <a target="_blank" rel="noopener" href="https://github.com/yochan06">yochan06</a></p>
+        </div>
+    </div>
+</footer>
+    <canvas id="code-rain"></canvas>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const postContent = document.getElementById('post-content');
+            const toc = document.getElementById('toc');
+
+            if (postContent && toc) {
+                const headings = postContent.querySelectorAll('h1, h2');
+                let currentH1 = null; // 用於追踪當前的 h1
+
+                headings.forEach((heading, index) => {
+                    const id = 'heading-' + index;
+                    heading.id = id;
+
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = '#' + id;
+                    a.textContent = heading.textContent;
+
+                    if (heading.tagName === 'H1') {
+                        // 如果是 h1，直接添加到 toc
+                        li.appendChild(a);
+                        toc.appendChild(li);
+                        currentH1 = li; // 更新當前的 h1
+                    } else if (heading.tagName === 'H2' && currentH1) {
+                        // 如果是 h2 且存在當前的 h1
+                        // 創建一個新的 ul
+                        let ul = document.createElement('ul');
+                        currentH1.appendChild(ul);
+
+                        //在 h2 中，也創建一個 li
+                        const h2Li = document.createElement('li');
+                        h2Li.appendChild(a);
+
+                        // 將 h2 的 li 放到 ul 中
+                        ul.appendChild(h2Li);
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="/js/code-rain.js"></script>
+</body>
+</html>

@@ -18,6 +18,8 @@ body {
 a {
     color: #00FF00;
     text-decoration: none;
+    word-break: break-all; /* 或使用 word-wrap: break-word; */
+    overflow-wrap: break-word;
 }
 
 a:hover {
@@ -127,12 +129,31 @@ footer a {
     background-color: #000; /* 添加黑色背景色 */
 }
 
-.post-title {
-    font-size: 28px;
-    margin-bottom: 10px;
-    margin-top: 0; 
+/* 仅为文章边框添加 hover 效果 */
+.post:hover {
+    animation: glow 3s linear infinite; /* 添加动画 */
 }
 
+/* 定义 glow 动画 */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00; /* 增加扩散半径和 box-shadow 层数 */
+    }
+    25% {
+        box-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF; /* 增加扩散半径和 box-shadow 层数 */
+    }
+    50% {
+        box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FFFF, 0 0 40px #00FFFF; /* 增加扩散半径和 box-shadow 层数 */
+    }
+    75% {
+        box-shadow: 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF, 0 0 50px #00FFFF; /* 增加扩散半径和 box-shadow 层数 */
+    }
+    100% {
+        box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00; /* 增加扩散半径和 box-shadow 层数 */
+    }
+}
+
+/* 保持文章标题链接颜色不变 */
 .post-title a {
     color: #00FFFF;
 }
@@ -216,6 +237,12 @@ footer a {
     font-style: italic;
 }
 
+.post-content img {
+    max-width: 100%; /* 图片最大宽度为父容器的 100% */
+    height: auto;    /* 高度自动调整，保持宽高比 */
+    display: block; /* 块级元素 */
+    margin: 0 auto; /* 水平居中 (可选) */
+}
 
 .archive-year {
     font-size: 24px;
@@ -288,6 +315,12 @@ footer a {
     color: #00FFFF; 
 }
 
+/* h3 子標題的樣式 */
+.widget-content ul#toc li ul li a {
+    color: #00FF00;
+    margin-left: 15px; /* 縮進以區分層級 */
+}
+
 .widget-content ul#toc li a:hover{
     text-decoration: underline;
 }
@@ -353,7 +386,6 @@ footer a {
     width: 80%;
 }
 
-
 .widget-content ul#year-list li a{
     color: #00FFFF;
     display: block; /* 使年份可點擊區域變大 */
@@ -365,12 +397,12 @@ footer a {
 }
 
 #code-rain {
-    position: absolute;
+    position: absolute; /* 使用 absolute 定位 */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* 確保 canvas 在背景 */
+    width: 100%;    /* 宽度填满 */
+    height: 100%;   /* 高度填满 */
+    z-index: -1;    /* 确保 canvas 在背景 */
 }
 /*
 .timeline::before {

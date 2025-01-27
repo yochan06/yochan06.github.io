@@ -34,7 +34,8 @@
                             <span><i class="fas fa-calendar"></i> 2025-01-12</span>
                         </div>
                         <div class="post-content" id="post-content">
-                            
+                            <p><img src="/../../../images/132590659.png" alt="test"></p>
+
                         </div>
                     </article>
                 </div>
@@ -58,28 +59,45 @@
 </footer>
     <canvas id="code-rain"></canvas>
     <script>
-     document.addEventListener('DOMContentLoaded', function() {
-         const postContent = document.getElementById('post-content');
-         const toc = document.getElementById('toc');
+        document.addEventListener('DOMContentLoaded', function() {
+            const postContent = document.getElementById('post-content');
+            const toc = document.getElementById('toc');
 
-         if (postContent && toc) {
-             const headings = postContent.querySelectorAll('h2, h3, h4, h5, h6');
+            if (postContent && toc) {
+                const headings = postContent.querySelectorAll('h1, h2');
+                let currentH1 = null; // 用於追踪當前的 h1
 
-             headings.forEach((heading, index) => {
-                 const id = 'heading-' + index;
-                 heading.id = id;
+                headings.forEach((heading, index) => {
+                    const id = 'heading-' + index;
+                    heading.id = id;
 
-                 const li = document.createElement('li');
-                 const a = document.createElement('a');
-                 a.href = '#' + id;
-                 a.textContent = heading.textContent;
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = '#' + id;
+                    a.textContent = heading.textContent;
 
-                 li.appendChild(a);
-                 toc.appendChild(li);
-             });
-         }
-     });
- </script>
- <script src="/js/code-rain.js"></script>
+                    if (heading.tagName === 'H1') {
+                        // 如果是 h1，直接添加到 toc
+                        li.appendChild(a);
+                        toc.appendChild(li);
+                        currentH1 = li; // 更新當前的 h1
+                    } else if (heading.tagName === 'H2' && currentH1) {
+                        // 如果是 h2 且存在當前的 h1
+                        // 創建一個新的 ul
+                        let ul = document.createElement('ul');
+                        currentH1.appendChild(ul);
+
+                        //在 h2 中，也創建一個 li
+                        const h2Li = document.createElement('li');
+                        h2Li.appendChild(a);
+
+                        // 將 h2 的 li 放到 ul 中
+                        ul.appendChild(h2Li);
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="/js/code-rain.js"></script>
 </body>
 </html>
